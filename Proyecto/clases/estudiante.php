@@ -1,7 +1,7 @@
 <?php
 if (!class_exists('estudiante')) {
   class estudiante{
-		var $nombre = "";
+		var $nombre;
 		var $apellido;
 		var $CI;
 		var $edad;
@@ -22,23 +22,18 @@ if (!class_exists('estudiante')) {
 		public function get_id_estudiante(){
 			return $this->id_estudiante;
 		}
-		
 		public function set_nombre($nombre_n){
-			// $this->$nombre=$nombre_n;
-			$nombre=$nombre_n;
+			$this->nombre=$nombre_n;
 		} 
 		public function get_nombre(){
-			// return $this->nombre;
-			return $nombre;
-		} 
-		
+			return $this->nombre;
+		}
 		public function set_apellido($apellido_n){
 			$this->apellido=$apellido_n;
 		} 
 		public function get_apellido(){
 			return $this->apellido;
-		} 
-		
+		}
 		public function set_CI($CI_n){
 			$this->CI=$CI_n;
 		} 

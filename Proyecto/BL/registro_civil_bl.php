@@ -1,5 +1,4 @@
 <?php
-	include("../clases/estudiante.php");
 	if (!function_exists('validar_cedula')){
 		function validar_cedula($cedula)
 		{		
@@ -25,11 +24,18 @@
 			{
 				include $filename;
 			}
-
+			include("../clases/estudiante.php");
 			$personas = consulta_personas($cedula);
-			$e = new estudiante();
-			$e->set_nombre("Alexander"); 
-			return $e;
+			foreach ($personas as $per) 
+			{
+				$e = new estudiante();
+				$e->set_nombre($per["NOMBRES"]);
+				$e->set_apellido($per["APELLIDOS"]);
+				$e->set_CI($per["CI"]);
+				$e->set_edad($per["FECHA_NAC"]);	
+				$estudiantes[]=$e;				
+			}
+			return $estudiantes;
 		}
 	}
 
@@ -42,12 +48,20 @@
 			}
 
 			$personas = consulta_personas($cedula);
-			if (count($personas)>0) {
-				return $mensaje = "La persona consta en el registro civil";
-			} else {
-				return $mensaje = "La persona NO consta en el registro civil";
+			foreach ($personas as $per) 
+			{
+				$fecha_nac = $per["FECHA_NAC"];			
 			}
-			return $mensaje;
+			return diferencia_anios($fecha_nac);
 		}
+	}
+
+	function diferencia_anios($fecha){
+		$fechainicial = new DateTime($fecha); //fecha recibida
+		$actual = date("Y-m-d",time());
+		$fechafinal = new DateTime($actual); //fecha actual
+
+		$diferencia = $fechainicial->diff($fechafinal); //diferencia entre fechas
+		return $diferencia->y; 
 	}
 ?>

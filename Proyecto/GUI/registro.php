@@ -8,31 +8,26 @@ if(!isset($_GET["cedula"])){
 	$email = $_POST["email"] = "";
 	$cursos = $_POST["cursos"] = "";
 } else{
-	echo $cedula = $_POST["cedula"];
-	echo "<br>";
-	echo $email = $_POST["email"];
-	echo "<br>";
-	echo $cursos = $_POST["cursos"];
+	$cedula = $_POST["cedula"];
+	$email = $_POST["email"];
+	$cursos = $_POST["cursos"];
 	$mensaje = validar_cedula($_POST["cedula"]);
+	echo "Estado de cedula: ".$mensaje;
 }
 
-echo "Estado de cedula: ".$mensaje;
-echo "<br>";
-echo diferencia_anios("1995-09-05");
-function diferencia_anios($fecha){
-	$fechainicial = new DateTime($fecha); //fecha recibida
-	$actual = date("Y-m-d",time());
-	$fechafinal = new DateTime($actual); //fecha actual
-
-	$diferencia = $fechainicial->diff($fechafinal); //diferencia entre fechas
-	return $diferencia->y; 
+if(isset($_GET["cedula"])){
+	$estudiantes = obtener_persona($_POST["cedula"]);
+	echo "<br>";
+	// var_dump($e);
+	foreach ($estudiantes as $est) {
+		$e = $est;
+		$e->set_edad(calcular_edad($_POST["cedula"]));
+		echo "Nombre: ".$e->get_nombre()."<br>";
+		echo "Apellido: ".$e->get_apellido()."<br>";
+		echo "Cedula: ".$e->get_CI()."<br>";
+		echo "Edad: ".$e->get_edad()."<br>";
+	}
 }
-
-$e = new estudiante();
-// $e = obtener_persona($_POST["cedula"]);
-$e->set_nombre("Alexander");
-$nombre = $e::get_nombre();
-echo $nombre;
 
 
 echo "<h2>Registro de cursos</h2>";
