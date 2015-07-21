@@ -2039,12 +2039,10 @@
 		width: 100%;
 	}
 
-
-	#demo-name,
-	#demo-password	{
+	#demo-user,
+	#demo-pass {
 		width: 50%;
 	}
-
 
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
@@ -2204,6 +2202,7 @@
 		color: #999 !important;
 		opacity: 1.0;
 	}
+	
 
 /* Box */
 
@@ -2705,6 +2704,10 @@
 /* Main */
 
 	.main {
+		padding: 1em 0 4em 0 ;
+	}
+
+	#one{
 		padding: 6em 0 4em 0 ;
 	}
 
