@@ -22,32 +22,28 @@
 			$this->monto=$monto_n;
 			$this->fecha_matricula=$fecha_matricula_n;
 		} 
-		
 		public function set_tipo_pago($tipo_pago_n){
 			$this->tipo_pago=$tipo_pago_n;
 		} 
 		public function get_tipo_pago(){
 			return $this->tipo_pago;
-		} 
-		
+		} 	
 		public function set_monto($monto_n){
 			$this->monto=$monto_n;
 		} 
 		public function get_monto(){
 			return $this->monto;
 		} 
-		
 		public function set_fecha_matricula($fecha_matricula_n){
 			$this->fecha_matricula=$fecha_matricula_n;
 		} 
 		public function get_fecha_matricula(){
+			$fecha_matricula = date("Y-m-d",time());
 			return $this->fecha_matricula;
 		}
-
 		//funciones de la clase
 		public function realizar_matricula(){
 
-			
 		} 
 	}
 ?>

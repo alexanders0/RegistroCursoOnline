@@ -9,11 +9,15 @@
 
 			$personas = consulta_personas($cedula);
 			if (count($personas)>0) {
-				return $mensaje = "La persona consta en el registro civil";
+				$mensaje = "La persona consta en el registro civil";
+				$estado_registro = 1;
 			} else {
-				return $mensaje = "La persona NO consta en el registro civil";
+				$mensaje = "La persona NO consta en el registro civil";
+				$estado_registro = 0;
 			}
-			return $mensaje;
+			$valores["mensaje"]=$mensaje;
+			$valores["estado"]=$estado_registro;
+			return $valores;
 		}
 	}
 
@@ -26,16 +30,22 @@
 			}
 			include("../clases/estudiante.php");
 			$personas = consulta_personas($cedula);
-			foreach ($personas as $per) 
-			{
-				$e = new estudiante();
-				$e->set_nombre($per["NOMBRES"]);
-				$e->set_apellido($per["APELLIDOS"]);
-				$e->set_CI($per["CI"]);
-				$e->set_edad($per["FECHA_NAC"]);	
-				$estudiantes[]=$e;				
+			if (is_array($personas)) {
+				foreach ($personas as $per) 
+				{
+					$e = new estudiante();
+					$e->set_nombre($per["NOMBRES"]);
+					$e->set_apellido($per["APELLIDOS"]);
+					$e->set_CI($per["CI"]);
+					$e->set_fecha_nac($per["FECHA_NAC"]);	
+					$estudiantes[]=$e;				
+				}
+				return $estudiantes;
+			} else {
+				return null;
 			}
-			return $estudiantes;
+
+			
 		}
 	}
 
