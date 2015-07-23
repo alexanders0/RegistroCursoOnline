@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include("../BL/matricula_bl.php");
 	$estudiantes = consultar_lista(1);
 
@@ -12,7 +13,12 @@ include("../BL/matricula_bl.php");
 			echo "Correo: ".$e->get_correo()."<br><br>";
 		}
 	}
+=======
+	include("cabecera.php");
+	include("../BL/matricula_bl.php");
+>>>>>>> origin/master
 ?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -64,6 +70,41 @@ include("../BL/matricula_bl.php");
 						<header class="major special">
 							<h5>Descargar</h5>
 						</header>
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Cédula</th>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>E-mail</th>
+										</tr>
+									</thead>
+									<tbody>
+									<?php
+											$estudiantes = consultar_lista($_SESSION["cuenta"]);
+											if (is_array($estudiantes)) {
+												foreach ($estudiantes as $est) {
+													$e = $est;
+													// print_r($e);
+													echo "<tr>";
+													echo "<td>".$e->get_CI()."</td>";
+													echo "<td>".$e->get_nombre()."</td>";
+													echo "<td>".$e->get_apellido()."</td>";
+													echo "<td>".$e->get_correo()."</td>";
+													echo "</tr>";
+												}
+											}
+									?>
+									</tbody>
+<!-- 									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot> -->
+								</table>
+							</div>
 						
 					</section>
 			</div>
