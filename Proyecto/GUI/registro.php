@@ -41,26 +41,26 @@ if(isset($_GET["ced"]) && $valor["estado"] == 1){
 	// echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
-if(isset($_POST["matricula"])){
-	$estudiantes = obtener_persona($_POST["cedula"]);
-	echo "<br>";
-	if (is_array($estudiantes)) {
-		foreach ($estudiantes as $est) {
-			$e = $est;
-			$edad = (calcular_edad($_POST["cedula"]));
-			$e->set_correo($_POST["email"]);
-			echo "Nombre: ".$e->get_nombre()."<br>";
-			echo "Apellido: ".$e->get_apellido()."<br>";
-			echo "Cedula: ".$e->get_CI()."<br>";
-			echo "Fecha de nacimiento: ".$e->get_fecha_nac()."<br>";
-			echo "Correo: ".$e->get_correo()."<br>";
-			echo "Edad: ".$edad;
-		}
-	}
-	realizar_matricula($e, $_POST["cursos"]);
-	// $message = "Estudiante registrado con Exito!";
-	// echo "<script type='text/javascript'>alert('$message');</script>";
-}
+// if(isset($_GET["matricula"])){
+// 	$estudiantes = obtener_persona($_POST["cedula"]);
+// 	echo "<br>";
+// 	if (is_array($estudiantes)) {
+// 		foreach ($estudiantes as $est) {
+// 			$e = $est;
+// 			$edad = (calcular_edad($_POST["cedula"]));
+// 			$e->set_correo($_POST["email"]);
+// 			echo "Nombre: ".$e->get_nombre()."<br>";
+// 			echo "Apellido: ".$e->get_apellido()."<br>";
+// 			echo "Cedula: ".$e->get_CI()."<br>";
+// 			echo "Fecha de nacimiento: ".$e->get_fecha_nac()."<br>";
+// 			echo "Correo: ".$e->get_correo()."<br>";
+// 			echo "Edad: ".$edad;
+// 		}
+// 	}
+// 	realizar_matricula($e, $_POST["cursos"]);
+// 	// $message = "Estudiante registrado con Exito!";
+// 	// echo "<script type='text/javascript'>alert('$message');</script>";
+// }
 
 echo "<h2>Registro de cursos</h2>";
 echo "<form name=form action=".$_SERVER['PHP_SELF']."?ced='".$cedula."' method='post'>";

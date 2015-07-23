@@ -52,4 +52,23 @@
 		}
 	}
 
+	if (!function_exists('consultar_id_matricula')){
+	  function consultar_id_matricula()
+	  	{
+	  		include("conect.php");
+			$SQL = "SELECT MAX(id) AS id FROM matriculas"; 
+			$resultado = mysql_query($SQL) or die(mysql_error($link));
+			print_r($resultado);
+		}
+	}
+
+	if (!function_exists('registrar_pago')){
+	  function registrar_pago($ID_MATRICULA, $ID_TIPO_PAGO, $MONTO)
+	  	{
+	  		include("conect.php");
+			$SQL = "INSERT INTO pagos (ID_MATRICULA, ID_TIPO_PAGO, MONTO) VALUES ('".$ID_MATRICULA."','".$ID_TIPO_PAGO."','".$MONTO."')"; 
+			$resultado = mysql_query($SQL) or die(mysql_error($link));
+		}
+	}
+
 ?>
