@@ -1,22 +1,5 @@
 <?php
-<<<<<<< HEAD
-include("../BL/matricula_bl.php");
-	$estudiantes = consultar_lista(1);
-
-	if (is_array($estudiantes)) {
-		foreach ($estudiantes as $est) {
-			$e = $est;
-			echo "Nombre: ".$e->get_nombre()."<br>";
-			echo "Apellido: ".$e->get_apellido()."<br>";
-			echo "Cedula: ".$e->get_CI()."<br>";
-			echo "Fecha de nacimiento: ".$e->get_fecha_nac()."<br>";
-			echo "Correo: ".$e->get_correo()."<br><br>";
-		}
-	}
-=======
-	include("cabecera.php");
 	include("../BL/matricula_bl.php");
->>>>>>> origin/master
 ?>
 
 <!DOCTYPE HTML>

@@ -1,5 +1,5 @@
 <?php
-include("cabecera.php");
+
 ?>
 <!DOCTYPE HTML>
 <html>

@@ -1,7 +1,5 @@
 <?php
-	include("cabecera.php");
 	include("../BL/matricula_bl.php");
-	print_r($_POST["promedio"]);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -92,7 +90,7 @@
 								<?php
 									echo "<input type='submit'></input>";
 									echo "<form>";
-								?>>
+								?>
 							</div>
 					</section>
 			</div>
