@@ -1,15 +1,17 @@
 <?php
-foreach (glob("../BL/*.php") as $filename)
-{
-	include $filename;
-}
+	foreach (glob("../BL/*.php") as $filename)
+	{
+		include $filename;
+	}
 
-echo $_GET["id_curso"];
+	$monto = consultar_monto($_GET["id_curso"]);
 
-if(isset($_POST["tipo_pago"])){
-	realizar_pago();
-}
-
+	if(isset($_POST["tipo_pago"])){
+		realizar_pago($_POST["tipo_pago"], $monto);
+		$message = "Pago realizado con Exito!";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<meta http-equiv='Refresh' content='0.3;url=index.html'>";
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -47,14 +49,14 @@ if(isset($_POST["tipo_pago"])){
 								<div class="6u 12u$(small)">
 									<label>
 										<?php 
-											echo consultar_monto($_GET["id_curso"]); 
+											echo $monto; 
 										?>
 									</label>
 								</div>
-								<div class="4u 12u$(small)">
-									<h4>Tipo de Pago</h4>
-								</div>	
 
+								<div class="6u 12u$(small)">
+									<h4>Tipo de Pago:</h4>
+								</div>
 								<div class="6u 12u$(xsmall)">
 									<div class="select-wrapper">
 										<select name="tipo_pago" id="demo-area ">

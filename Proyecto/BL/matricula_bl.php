@@ -31,17 +31,15 @@
 			registrar_estudiante($e->get_CI(), $e->get_nombre(), $e->get_apellido(), 
 				$e->get_fecha_nac(), $e->get_correo());
 			registrar_matricula($e->get_CI(), $ID_CURSO);
-			// registrar_pago();
 		}
 	}
 
 	if (!function_exists('realizar_pago')){
-		function realizar_pago()
+		function realizar_pago($ID_TIPO_PAGO, $MONTO)
 		{		
 			include ("../DAT/matricula_dat.php");
-			$id_matricula = consultar_id_matricula();
-			print_r($id_matricula);
-			// registrar_pago();
+			$ID_MATRICULA = consultar_id_matricula();
+			registrar_pago($ID_MATRICULA, $ID_TIPO_PAGO, $MONTO);
 		}
 	}
 ?>

@@ -56,11 +56,17 @@
 	  function consultar_id_matricula()
 	  	{
 	  		include("conect.php");
-			$SQL = "SELECT MAX(id) AS id FROM matriculas"; 
+			$SQL = "SELECT MAX(ID_MATRICULA) AS id FROM matriculas"; 
 			$resultado = mysql_query($SQL) or die(mysql_error($link));
-			print_r($resultado);
+			while ($row  = mysql_fetch_array($resultado,MYSQL_ASSOC))
+			{
+			  $id[]=$row;
+
+			}
+			return $id[0]["id"];
 		}
 	}
+	
 
 	if (!function_exists('registrar_pago')){
 	  function registrar_pago($ID_MATRICULA, $ID_TIPO_PAGO, $MONTO)

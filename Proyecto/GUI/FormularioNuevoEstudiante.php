@@ -5,70 +5,46 @@ foreach (glob("../BL/*.php") as $filename)
 	include $filename;
 }
 
+//Mantener los datos de la cedula y mail en los inputs
 if(!isset($_GET["cedula"])){
 	$cedula = $_GET["cedula"] = "";
 	$email = $_GET["email"] = "";
-	$cursos = $_GET["cursos"] = "";
 } else{
 	$cedula = $_GET["cedula"];
 	$email = $_GET["email"];
-	// $cursos = $_POST["cursos"];
 	$valor = validar_cedula($_GET["cedula"]);
-	// echo $valor["estado"];
-	// echo "Estado de cedula: ".$valor["mensaje"];
-	// echo $_GET["cedula"];
-	// echo $_GET["email"];
 }
 
-
-
+//Obtener los datos del aspirante según su CI ingresada
 if(isset($_GET["cedula"])){
 	$estudiantes = obtener_persona($_GET["cedula"]);
-	echo "<br>";
 	if (is_array($estudiantes)) {
 		foreach ($estudiantes as $est) {
 			$e = $est;
 			$edad = (calcular_edad($_GET["cedula"]));
 			$e->set_correo($_GET["email"]);
-			// echo "Nombre: ".$e->get_nombre()."<br>";
-			// echo "Apellido: ".$e->get_apellido()."<br>";
-			// echo "Cedula: ".$e->get_CI()."<br>";
-			// echo "Fecha de nacimiento: ".$e->get_fecha_nac()."<br>";
-			// echo "Correo: ".$e->get_correo()."<br>";
-			// echo "Edad: ".$edad;
 		}
 	}
-	
-	// header('Location: FormularioPago.php');
-	// realizar_matricula($e, $_POST["cursos"]);
-	// $message = "Estudiante registrado con Exito!";
-	// echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
+//Una vez seleccionado el curso, se 
 if(isset($_POST["cursos"])){
 	$estudiantes = obtener_persona($_GET["cedula"]);
-	echo "<br>";
 	if (is_array($estudiantes)) {
 		foreach ($estudiantes as $est) {
 			$e = $est;
 			$edad = (calcular_edad($_GET["cedula"]));
 			$e->set_correo($_GET["email"]);
-			// echo "Nombre: ".$e->get_nombre()."<br>";
-			// echo "Apellido: ".$e->get_apellido()."<br>";
-			// echo "Cedula: ".$e->get_CI()."<br>";
-			// echo "Fecha de nacimiento: ".$e->get_fecha_nac()."<br>";
-			// echo "Correo: ".$e->get_correo()."<br>";
-			// echo "Edad: ".$edad;
 		}
 	}
-	// $curso = new curso();
-	// $curso->set_id_curso($_POST["cursos"]));
+
 	realizar_matricula($e, $_POST["cursos"]);
-	$id_curso = $_POST["cursos"];
 	$message = "Estudiante registrado con Exito!";
 	echo "<script type='text/javascript'>alert('$message');</script>";
-	header("Location: FormularioPago.php?id_curso=$id_curso");
+	$id_curso = $_POST["cursos"];
+	echo "<meta http-equiv='Refresh' content='0;url=FormularioPago.php?id_curso=$id_curso'>";
 }
+
 ?>
 
 <!DOCTYPE HTML>
