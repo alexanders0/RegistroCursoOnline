@@ -1,6 +1,3 @@
-<?php
-include("cabecera.php");
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -17,6 +14,11 @@ include("cabecera.php");
 		<!-- Five -->
 		<section id="five" class="main style1">
 			<div class="container">
+				<div id="logeo">
+					<?php
+						include("cabecera.php");
+					?>
+				</div>
 				<header class="major special">
 					<h2>SRCL</h2>
 				</header>
