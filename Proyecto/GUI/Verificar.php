@@ -17,11 +17,16 @@ include("cabecera.php");
 		<!-- Five -->
 		<section id="five" class="main style1">
 			<div class="container">
+				 <div id="logeo">
+					<?php
+						include("cabecera.php");
+					?>
+				</div>
 				<header class="major special">
 					<h2>SRCL</h2>
 				</header>
 					<section>						
-						<a href="index2.html" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a>
+						<a href="index2.php" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a>
 						<h4>Servicios</h4>
 
 						<ul class="actions fit small">
