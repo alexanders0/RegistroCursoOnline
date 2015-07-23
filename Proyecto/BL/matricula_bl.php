@@ -89,4 +89,28 @@
 			}
 	  	}
 	}
+
+	if (!function_exists('consultar_notas_estudiantes')){
+	  	function consultar_notas_estudiantes($CI_EMPLEADO)
+	  	{
+	  		include ("../DAT/matricula_dat.php");
+	  		include ("../clases/estudiante.php");
+	  		$estudiantes = consultar_notas($CI_EMPLEADO);
+	  		foreach ($estudiantes as $estudiante) {
+	  			$estudiante["PROMEDIO"] = consultar_promedio($estudiante["ID_MATRICULA"]);
+	  		}
+	  		// echo $estudiante[0]["PROMEDIO"];
+	  		return $estudiantes;
+	  	}
+	}
+
+	if (!function_exists('consultar_prom')){
+	  	function consultar_prom($ID_MATRICULA)
+	  	{
+	  		include ("../DAT/matricula_dat.php");
+	  		include ("../clases/estudiante.php");
+  			$promedio = consultar_promedio($ID_MATRICULA);
+  			return $promedio;
+	  	}
+	  }
 ?>

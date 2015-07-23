@@ -1,5 +1,7 @@
 <?php
-include("cabecera.php");
+	include("cabecera.php");
+	include("../BL/matricula_bl.php");
+	print_r($_POST["promedio"]);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -56,45 +58,41 @@ include("cabecera.php");
 								<table class="alt">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
+											<th>Cedula</th>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>Promedio de Notas</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
+									<?php
+										$estudiantes = consultar_notas_estudiantes($_SESSION["cuenta"]);
+										// print_r($estudiantes);
+										if (is_array($estudiantes)) {
+											foreach ($estudiantes as $est) {
+												$e = $est;
+												// print_r($e);
+												echo "<tr>";
+												echo "<td>".$e["CI"]."</td>";
+												echo "<td>".$e["NOMBRES"]."</td>";
+												echo "<td>".$e["APELLIDOS"]."</td>";
+												$promedio = consultar_prom($e["ID_MATRICULA"]);
+												echo " <form name=form action=".$_SERVER['PHP_SELF']." method='post'>";
+
+												echo "<td><input name='promedio' value=".round($promedio["PROMEDIO"])."></input></td>";
+												echo "</tr>";
+												$e["PROMEDIO"] = $promedio["PROMEDIO"];
+												$lista[] = $e;
+											}
+										}
+									?>
 										</tr>
 									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
 								</table>
+								<?php
+									echo "<input type='submit'></input>";
+									echo "<form>";
+								?>>
 							</div>
 					</section>
 			</div>

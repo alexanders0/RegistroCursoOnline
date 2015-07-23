@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-07-2015 a las 10:36:12
+-- Tiempo de generación: 24-07-2015 a las 01:29:20
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.5.24
 
@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `cursos` (
 
 INSERT INTO `cursos` (`ID_CURSO`, `ID_CATEGORIA`, `CI_EMPLEADO`, `NOMBRE_CURSO`, `HORA_INICIO`, `HORA_FIN`, `PRECIO`) VALUES
 (1, 2, 1, 'Base de Datos', '14:00', '18:00', '40'),
-(2, 2, NULL, 'Ingenieria de Software', '12:00', '15:00', '50'),
-(3, 2, NULL, 'Sistemas Operativos', '14:00', '16:00', '60'),
+(2, 2, 3, 'Ingenieria de Software', '12:00', '15:00', '50'),
+(3, 2, 1, 'Sistemas Operativos', '14:00', '16:00', '60'),
 (4, 1, NULL, 'Robótica Básica', '15:00', '16:00', '70'),
 (5, 3, NULL, 'Gestión de Proyectos', NULL, NULL, '100');
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `empleados` (
   `TIPO_EMP` varchar(1024) DEFAULT NULL,
   `usuario` varchar(10) NOT NULL,
   `contrasena` varchar(15) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `empleados`
@@ -93,7 +93,8 @@ CREATE TABLE IF NOT EXISTS `empleados` (
 
 INSERT INTO `empleados` (`CI_EMPLEADO`, `NOMBRE_EMP`, `APELLIDO_EMP`, `CORREO_EMP`, `TITULO`, `TIPO_EMP`, `usuario`, `contrasena`) VALUES
 (1, 'Jaime', 'García', 'jgarcia@utpl.edu.ec', 'Ingeniero Industrial', 'tutor', 'jgarcia', '1111'),
-(2, 'Ana', 'Rodriguez', 'arodriguez@utpl.edu.ec', 'Ingeniera en Empresas', 'secretaria', 'arodriguez', '2222');
+(2, 'Ana', 'Rodriguez', 'arodriguez@utpl.edu.ec', 'Ingeniera en Empresas', 'secretaria', 'arodriguez', '2222'),
+(3, 'Carlos', 'Jumbo', 'cjumbo@utpl.edu.ec', 'Ingeniero en Sistemas', 'tutor', 'cjumbo', '3333');
 
 -- --------------------------------------------------------
 
@@ -114,15 +115,10 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`CI`, `NOMBRES`, `APELLIDOS`, `FECHA_NAC`, `E_MAIL`) VALUES
-('1104183247', 'Priscila', 'Vargas', '1994-12-20', 'pyvargas@utpl.edu.ec'),
-('1111', 'Bryan', 'Quezada', '2015-07-14', 'bequezada@utpl.edu.ec'),
-('2', 'Alexander', 'Sanchez', '1995-09-05', 'ajsanchez9@utpl.edu.ec'),
-('3', 'Priscila', 'Vargas', '2015-07-22', 'pyvargas@utpl.edu.ec'),
-('3333', 'Erick', 'Perez', '2000-07-08', 'alexsajona@hotmail.com'),
-('4444', 'Javato', 'Jones', '1990-04-15', 'alexsajona@hotmail.com'),
 ('1104876147', 'Alexander', 'Sanchez', '1995-09-05', 'alexsajona@hotmail.com'),
-('2222', 'Bryan', 'Quezada', '1994-07-13', 'alexsajona@hotmail.com'),
-('5555', 'Priscila', 'Vargas', '1994-12-20', 'pyvargas@utpl.edu.ec');
+('2222', 'Bryan', 'Quezada', '1994-07-13', 'bryque19@gmail.com'),
+('5555', 'Priscila', 'Vargas', '1994-12-20', 'luisjose13794@hotmail.com'),
+('6666', 'Marco', 'Hernandez', '1995-07-07', 'alexsajona@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -138,72 +134,18 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
   `ESTADO` varchar(1024) DEFAULT NULL,
   `NOTA_FINAL` int(11) DEFAULT NULL,
   `FECHA_MAT` date NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `matriculas`
 --
 
 INSERT INTO `matriculas` (`ID_MATRICULA`, `CI`, `ID_PERIODO`, `ID_CURSO`, `ESTADO`, `NOTA_FINAL`, `FECHA_MAT`) VALUES
-(1, '1111', 1, 1, 'Aprobado', 22, '0000-00-00'),
-(7, '1104876147', 1, 5, NULL, NULL, '0000-00-00'),
-(6, '4444', 1, 5, NULL, NULL, '0000-00-00'),
-(8, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(9, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(10, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(11, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(12, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(13, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(14, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(15, '2222', 1, 0, NULL, NULL, '0000-00-00'),
-(16, '2222', 1, 0, NULL, NULL, '0000-00-00'),
-(17, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(18, '2222', 1, 0, NULL, NULL, '0000-00-00'),
-(19, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(20, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(21, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(22, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(23, '2222', 1, 0, NULL, NULL, '0000-00-00'),
-(24, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(25, '1104876147', 1, 0, NULL, NULL, '0000-00-00'),
-(26, '4444', 1, 0, NULL, NULL, '0000-00-00'),
-(27, '5555', 1, 0, NULL, NULL, '0000-00-00'),
-(28, '2222', 1, 2, NULL, NULL, '0000-00-00'),
-(29, '5555', 1, 3, NULL, NULL, '0000-00-00'),
-(30, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(31, '1104876147', 1, 3, NULL, NULL, '0000-00-00'),
-(32, '1104876147', 1, 1, NULL, NULL, '0000-00-00'),
-(33, '1104876147', 1, 3, NULL, NULL, '0000-00-00'),
-(34, '3333', 1, 4, NULL, NULL, '0000-00-00'),
-(35, '3333', 1, 4, NULL, NULL, '0000-00-00'),
-(36, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(37, '1104876147', 1, 3, NULL, NULL, '0000-00-00'),
-(38, '2222', 1, 2, NULL, NULL, '0000-00-00'),
-(39, '4444', 1, 5, NULL, NULL, '0000-00-00'),
-(40, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(41, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(42, '4444', 1, 5, NULL, NULL, '0000-00-00'),
-(43, '3333', 1, 4, NULL, NULL, '0000-00-00'),
-(44, '5555', 1, 2, NULL, NULL, '0000-00-00'),
-(45, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(46, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(47, '4444', 1, 5, NULL, NULL, '0000-00-00'),
-(48, '5555', 1, 2, NULL, NULL, '0000-00-00'),
-(49, '2222', 1, 2, NULL, NULL, '0000-00-00'),
-(50, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(51, '3333', 1, 4, NULL, NULL, '0000-00-00'),
-(52, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(53, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(54, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(55, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(56, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(57, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(58, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(59, '1104876147', 1, 3, NULL, NULL, '2015-07-23'),
-(60, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(61, '2222', 1, 2, NULL, NULL, '2015-07-23'),
-(62, '3333', 1, 4, NULL, NULL, '2015-07-23'),
-(63, '1104876147', 1, 3, NULL, NULL, '2015-07-23');
+(1, '1104876147', 1, 1, NULL, NULL, '2015-07-23'),
+(2, '2222', 1, 2, NULL, NULL, '2015-07-23'),
+(3, '5555', 1, 2, NULL, NULL, '2015-07-23'),
+(4, '5555', 1, 1, NULL, NULL, '2015-07-23'),
+(5, '6666', 1, 3, NULL, NULL, '2015-07-23');
 
 -- --------------------------------------------------------
 
@@ -215,7 +157,21 @@ CREATE TABLE IF NOT EXISTS `notas` (
   `ID_NOTA` int(11) NOT NULL,
   `NOTA` decimal(10,0) NOT NULL,
   `ID_MATRICULA` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`ID_NOTA`, `NOTA`, `ID_MATRICULA`) VALUES
+(1, '20', 1),
+(2, '15', 1),
+(3, '17', 1),
+(4, '19', 1),
+(5, '14', 3),
+(6, '16', 3),
+(7, '15', 5),
+(8, '18', 5);
 
 -- --------------------------------------------------------
 
@@ -228,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `pagos` (
   `ID_MATRICULA` int(11) DEFAULT NULL,
   `ID_TIPO_PAGO` int(11) DEFAULT NULL,
   `MONTO` decimal(10,0) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pagos`
@@ -260,7 +216,15 @@ INSERT INTO `pagos` (`ID_PAGO`, `ID_MATRICULA`, `ID_TIPO_PAGO`, `MONTO`) VALUES
 (23, 60, 2, '50'),
 (24, 61, 2, '50'),
 (25, 62, 2, '70'),
-(26, 63, 2, '60');
+(26, 63, 2, '60'),
+(27, 64, 2, '50'),
+(28, 65, 2, '50'),
+(29, 66, 2, '50'),
+(30, 1, 2, '40'),
+(31, 2, 1, '50'),
+(32, 3, 2, '50'),
+(33, 4, 2, '40'),
+(34, 5, 1, '60');
 
 -- --------------------------------------------------------
 
@@ -294,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `registro` (
   `NOMBRES` text NOT NULL,
   `APELLIDOS` text NOT NULL,
   `FECHA_NAC` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `registro`
@@ -305,7 +269,8 @@ INSERT INTO `registro` (`ID`, `CI`, `NOMBRES`, `APELLIDOS`, `FECHA_NAC`) VALUES
 (3, '2222', 'Bryan', 'Quezada', '1994-07-13'),
 (4, '3333', 'Erick', 'Perez', '2000-07-08'),
 (5, '4444', 'Javato', 'Jones', '1990-04-15'),
-(6, '5555', 'Priscila', 'Vargas', '1994-12-20');
+(6, '5555', 'Priscila', 'Vargas', '1994-12-20'),
+(7, '6666', 'Marco', 'Hernandez', '1995-07-07');
 
 -- --------------------------------------------------------
 
@@ -416,22 +381,22 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `CI_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `CI_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `matriculas`
 --
 ALTER TABLE `matriculas`
-  MODIFY `ID_MATRICULA` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
+  MODIFY `ID_MATRICULA` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `ID_NOTA` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_NOTA` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `ID_PAGO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `ID_PAGO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `periodos`
 --
@@ -441,7 +406,7 @@ ALTER TABLE `periodos`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `tipo_pago`
 --

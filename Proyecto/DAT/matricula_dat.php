@@ -103,4 +103,29 @@
 		}
 	}
 
+	if (!function_exists('consultar_notas')){
+	  function consultar_notas($CI_EMPLEADO)
+	  	{
+	  		include("conect.php");
+			$SQL = "SELECT DISTINCT estudiantes.*, notas.ID_MATRICULA FROM estudiantes JOIN matriculas on estudiantes.CI=matriculas.CI JOIN cursos on matriculas.ID_CURSO=cursos.ID_CURSO JOIN notas on notas.ID_MATRICULA=matriculas.ID_MATRICULA WHERE CI_EMPLEADO='".$CI_EMPLEADO."'"; 
+			$resultado = mysql_query($SQL) or die(mysql_error($link));
+			while ($row  = mysql_fetch_array($resultado,MYSQL_ASSOC))
+			{
+			  	$notas[]=$row;
+			}
+			return $notas;
+		}
+	}
+
+	if (!function_exists('consultar_promedio')){
+	  function consultar_promedio($ID_MATRICULA)
+	  	{
+	  		include("conect.php");
+			$SQL = "SELECT AVG(NOTA) AS 'PROMEDIO' FROM notas WHERE ID_MATRICULA='".$ID_MATRICULA."'"; 
+			$resultado = mysql_query($SQL) or die(mysql_error($link));
+			$row  = mysql_fetch_array($resultado,MYSQL_ASSOC);
+			return $row;
+		}
+	}
+
 ?>

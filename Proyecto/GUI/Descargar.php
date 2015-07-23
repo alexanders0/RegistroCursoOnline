@@ -68,7 +68,7 @@ include("../BL/matricula_bl.php");
 					<section>
 						<!-- 						<h5>Descargar</h5> -->
 						<header class="major special">
-							<h5>Descargar</h5>
+							<h5>Descargar Lista de Estudiantes</h5>
 						</header>
 							<div class="table-wrapper">
 								<table class="alt">
