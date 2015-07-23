@@ -64,9 +64,9 @@ if(isset($_POST["cursos"])){
 
 		<!-- Five -->
 			<section id="five" class="main style1">
-				<div class="container">
+				<div class="container" id="uno">
 					<ul class="icons">
-						<li><a href="index.html" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a></li>
+						<li><a href="index.php" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a></li>
 					</ul>
 
 					<header class="major special">

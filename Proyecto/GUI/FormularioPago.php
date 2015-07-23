@@ -30,10 +30,7 @@
 
 		<!-- Five -->
 			<section id="five" class="main style1">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="index.html" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a></li>
-					</ul>
+				<div class="container" id="uno">
 
 					<header class="major special">
 						<h2>Pago</h2>
@@ -47,19 +44,18 @@
 									<h4>Monto a Cancelar:</h4>
 								</div>
 								<div class="6u 12u$(small)">
-									<label>
+									<h4>$
 										<?php 
 											echo $monto; 
-										?>
-									</label>
+										?> 
+									</h4>
 								</div>
-
-								<div class="6u 12u$(small)">
+								<div class="6u 12u$(xsmall)">
 									<h4>Tipo de Pago:</h4>
 								</div>
 								<div class="6u 12u$(xsmall)">
 									<div class="select-wrapper">
-										<select name="tipo_pago" id="demo-area ">
+										<select name="tipo_pago" id="demo-area">
 											<?php
 												$tipo_pago = lista_tipo_pago();
 											    foreach ($tipo_pago as $tipo)

@@ -60,12 +60,13 @@
 
 	.container {
 		margin-left: auto;
-		margin-right: auto;
+		margin-right: auto; 
+		width: 100%;
 	}
 
 	.container.\31 25\25 {
 		width: 100%;
-		max-width: 75em;
+		max-width: 40em;
 		min-width: 60em;
 	}
 
@@ -83,6 +84,9 @@
 
 	.container {
 		width: 60em;
+	}
+	#uno {
+		width: 30em;
 	}
 
 	@media screen and (max-width: 1680px) {
@@ -107,6 +111,9 @@
 
 		.container {
 			width: 60em;
+		}
+		#uno {
+			width: 30em;
 		}
 
 	}
@@ -2604,6 +2611,26 @@
 		white-space: nowrap;
 	}
 
+	#salir {
+		background-color: transparent;
+		border-radius: none;
+		border: 0;
+		box-shadow: none;
+		color: #555 !important;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.9em;
+		font-weight: 400;
+		height: 2.75em;
+		letter-spacing: 0.125em;
+		line-height: 2.75em;
+		padding: 0 2em;
+		text-align: center;
+		text-decoration: none;
+		text-indent: 0.125em;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
@@ -2709,6 +2736,9 @@
 
 	#one{
 		padding: 6em 0 4em 0 ;
+	}
+	#logeo{
+		text-align: right;
 	}
 
 		.main.style1 {
