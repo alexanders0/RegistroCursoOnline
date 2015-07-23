@@ -1,3 +1,14 @@
+<?php
+	foreach (glob("../BL/usuarios_bl.php") as $filename)
+	{
+		include $filename;
+	}
+
+	if (isset($_POST["usuario"]) AND isset($_POST["contrasena"])) {
+		validar_usuarios($_POST["usuario"], $_POST["contrasena"]);
+	} 
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -114,10 +125,10 @@
 					<form method="post" action="#">
 							<div class="row uniform 50% ">
 								<div class="12u$">
-									<input type="text" name="demo-name" id="demo-user" value="" placeholder="Usuario" />
+									<input type="text" name="usuario" id="demo-user" value="" placeholder="Usuario" />
 								</div>
 								<div class="12u$">
-									<input type="password" name="demo-password" id="demo-pass" value="" placeholder="Contraseña" />
+									<input type="password" name="contrasena" id="demo-pass" value="" placeholder="Contraseña" />
 								</div>
 								<div class="12u$">
 									<ul class="actions">

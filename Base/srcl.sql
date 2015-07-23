@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-07-2015 a las 07:39:21
+-- Tiempo de generación: 23-07-2015 a las 10:36:12
 -- Versión del servidor: 5.6.24
--- Versión de PHP: 5.6.8
+-- Versión de PHP: 5.5.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
 --
 
 INSERT INTO `cursos` (`ID_CURSO`, `ID_CATEGORIA`, `CI_EMPLEADO`, `NOMBRE_CURSO`, `HORA_INICIO`, `HORA_FIN`, `PRECIO`) VALUES
-(1, 2, NULL, 'Base de Datos', '14:00', '18:00', '40'),
+(1, 2, 1, 'Base de Datos', '14:00', '18:00', '40'),
 (2, 2, NULL, 'Ingenieria de Software', '12:00', '15:00', '50'),
 (3, 2, NULL, 'Sistemas Operativos', '14:00', '16:00', '60'),
 (4, 1, NULL, 'Robótica Básica', '15:00', '16:00', '70'),
@@ -85,14 +85,15 @@ CREATE TABLE IF NOT EXISTS `empleados` (
   `TIPO_EMP` varchar(1024) DEFAULT NULL,
   `usuario` varchar(10) NOT NULL,
   `contrasena` varchar(15) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
 INSERT INTO `empleados` (`CI_EMPLEADO`, `NOMBRE_EMP`, `APELLIDO_EMP`, `CORREO_EMP`, `TITULO`, `TIPO_EMP`, `usuario`, `contrasena`) VALUES
-(1, 'Jaime', 'García', 'jgarcia@utpl.edu.ec', 'Ingeniero Industrial', 'tutor', 'jgarcia', '1111');
+(1, 'Jaime', 'García', 'jgarcia@utpl.edu.ec', 'Ingeniero Industrial', 'tutor', 'jgarcia', '1111'),
+(2, 'Ana', 'Rodriguez', 'arodriguez@utpl.edu.ec', 'Ingeniera en Empresas', 'secretaria', 'arodriguez', '2222');
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
   `ESTADO` varchar(1024) DEFAULT NULL,
   `NOTA_FINAL` int(11) DEFAULT NULL,
   `FECHA_MAT` date NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `matriculas`
@@ -196,7 +197,13 @@ INSERT INTO `matriculas` (`ID_MATRICULA`, `CI`, `ID_PERIODO`, `ID_CURSO`, `ESTAD
 (54, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
 (55, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
 (56, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
-(57, '1104876147', 1, 2, NULL, NULL, '0000-00-00');
+(57, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
+(58, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
+(59, '1104876147', 1, 3, NULL, NULL, '2015-07-23'),
+(60, '1104876147', 1, 2, NULL, NULL, '0000-00-00'),
+(61, '2222', 1, 2, NULL, NULL, '2015-07-23'),
+(62, '3333', 1, 4, NULL, NULL, '2015-07-23'),
+(63, '1104876147', 1, 3, NULL, NULL, '2015-07-23');
 
 -- --------------------------------------------------------
 
@@ -221,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `pagos` (
   `ID_MATRICULA` int(11) DEFAULT NULL,
   `ID_TIPO_PAGO` int(11) DEFAULT NULL,
   `MONTO` decimal(10,0) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `pagos`
@@ -247,7 +254,13 @@ INSERT INTO `pagos` (`ID_PAGO`, `ID_MATRICULA`, `ID_TIPO_PAGO`, `MONTO`) VALUES
 (17, 54, 2, '50'),
 (18, 55, 2, '50'),
 (19, 56, 2, '50'),
-(20, 57, 2, '50');
+(20, 57, 2, '50'),
+(21, 58, 2, '50'),
+(22, 59, 2, '60'),
+(23, 60, 2, '50'),
+(24, 61, 2, '50'),
+(25, 62, 2, '70'),
+(26, 63, 2, '60');
 
 -- --------------------------------------------------------
 
@@ -403,12 +416,12 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `CI_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `CI_EMPLEADO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `matriculas`
 --
 ALTER TABLE `matriculas`
-  MODIFY `ID_MATRICULA` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `ID_MATRICULA` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT de la tabla `notas`
 --
@@ -418,7 +431,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `ID_PAGO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `ID_PAGO` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de la tabla `periodos`
 --

@@ -10,7 +10,7 @@
 		realizar_pago($_POST["tipo_pago"], $monto);
 		$message = "Pago realizado con Exito!";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-		echo "<meta http-equiv='Refresh' content='0.3;url=index.html'>";
+		echo "<meta http-equiv='Refresh' content='0.3;url=index.php'>";
 	}
 ?>
 

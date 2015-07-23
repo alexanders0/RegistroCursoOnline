@@ -1,3 +1,6 @@
+<?php
+include("cabecera.php");
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -22,19 +25,72 @@
 						<h4>Servicios</h4>
 
 						<ul class="actions fit small">
-							<li><a href="FormularioNuevoTutor.html" class="button special fit small">Registrar Tutor</a></li>
-							<li><a href="Verificar.html" class="button fit small">Verificar los requisitos</a></li>
-							<li><a href="Descargar.html" class="button special fit small">Descargar lista</a></li>
-							<li><a href="RegistrarNotas.html" class="button fit small">Registrar Notas</a></li>
+							<?php 
+								if ($_SESSION["acceso"] == "secretaria") {
+									echo "<li><a href=FormularioNuevoTutor.php class=button special fit small>Registrar Tutor</a></li>";
+								}
+								if ($_SESSION["acceso"] == "secretaria") {
+									echo "<li><a href=Verificar.php class=button fit small>Verificar los requisitos</a></li>";
+								}
+								if ($_SESSION["acceso"] == "tutor") {
+									echo "<li><a href=Descargar.php class=button special fit small>Descargar lista</a></li>";
+								}
+								if ($_SESSION["acceso"] == "tutor") {
+									echo "<li><a href=RegistrarNotas.php class=button fit small>Registrar Notas</a></li>";
+								}
+							?>
 						</ul>
 					</section>
 
 					<section>
-						<!-- 						<h5>Descargar</h5> -->
+						<!-- 						<h5>Registrar Notas</h5> -->
 						<header class="major special">
-							<h5>Descargar</h5>
+							<h5>Registrar Notas</h5>
 						</header>
-						
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Item One</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Two</td>
+											<td>Vis ac commodo adipiscing arcu aliquet.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Three</td>
+											<td> Morbi faucibus arcu accumsan lorem.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>Item Four</td>
+											<td>Vitae integer tempus condimentum.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>Item Five</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
 					</section>
 			</div>
 		</section>

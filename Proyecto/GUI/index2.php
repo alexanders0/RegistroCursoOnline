@@ -1,3 +1,6 @@
+<?php
+include("cabecera.php");
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -22,10 +25,20 @@
 						<h4>Servicios</h4>
 
 						<ul class="actions fit small">
-							<li><a href="FormularioNuevoTutor.html" class="button special fit small">Registrar Tutor</a></li>
-							<li><a href="Verificar.html" class="button fit small">Verificar los requisitos</a></li>
-							<li><a href="Descargar.html" class="button special fit small">Descargar lista</a></li>
-							<li><a href="RegistrarNotas.html" class="button fit small">Registrar Notas</a></li>
+							<?php 
+								if ($_SESSION["acceso"] == "secretaria") {
+									echo "<li><a href=FormularioNuevoTutor.php class=button special fit small>Registrar Tutor</a></li>";
+								}
+								if ($_SESSION["acceso"] == "secretaria") {
+									echo "<li><a href=Verificar.php class=button fit small>Verificar los requisitos</a></li>";
+								}
+								if ($_SESSION["acceso"] == "tutor") {
+									echo "<li><a href=Descargar.php class=button special fit small>Descargar lista</a></li>";
+								}
+								if ($_SESSION["acceso"] == "tutor") {
+									echo "<li><a href=RegistrarNotas.php class=button fit small>Registrar Notas</a></li>";
+								}
+							?>	
 						</ul>
 					</section>
 

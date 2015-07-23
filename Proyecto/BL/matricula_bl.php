@@ -28,9 +28,11 @@
 			include ("../clases/estudiante.php");
 			$e = $estudiante;
 
+			$FECHA_MAT = date("Y-m-d",time());
+
 			registrar_estudiante($e->get_CI(), $e->get_nombre(), $e->get_apellido(), 
 				$e->get_fecha_nac(), $e->get_correo());
-			registrar_matricula($e->get_CI(), $ID_CURSO);
+			registrar_matricula($e->get_CI(), $ID_CURSO, $FECHA_MAT);
 		}
 	}
 
@@ -41,5 +43,29 @@
 			$ID_MATRICULA = consultar_id_matricula();
 			registrar_pago($ID_MATRICULA, $ID_TIPO_PAGO, $MONTO);
 		}
+	}
+
+	if (!function_exists('consultar_lista')){
+	  	function consultar_lista($CI_EMPLEADO)
+	  	{
+	  		include ("../DAT/matricula_dat.php");
+	  		include ("../clases/estudiante.php");
+	  		$estudiantes = consultar_lista_estudiantes($CI_EMPLEADO);
+			if (is_array($estudiantes)) {
+				foreach ($estudiantes as $est) 
+				{
+					$e = new estudiante();
+					$e->set_nombre($est["NOMBRES"]);
+					$e->set_apellido($est["APELLIDOS"]);
+					$e->set_CI($est["CI"]);
+					$e->set_fecha_nac($est["FECHA_NAC"]);	
+					$e->set_correo($est["E_MAIL"]);	
+					$lista_estudiantes[]=$e;				
+				}
+				return $lista_estudiantes;
+			} else {
+				return null;
+			}
+	  	}
 	}
 ?>
