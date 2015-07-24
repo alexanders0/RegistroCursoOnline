@@ -15,10 +15,7 @@
 		<title>SRCL</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/principal.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
 
@@ -36,23 +33,6 @@
 			</section>
 
 		<!-- One -->
-<!-- 			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row 150%">
-						<div class="6u 12u$(medium)">
-							<header class="major">
-								<h2>Sistema de Recursos en linea</h2>
-							</header>
-							<p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
-						</div>
-						<div class="6u$ 12u$(medium) important(medium)">
-							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
-						</div>
-					</div>
-				</div>
-			</section> -->
-
-		<!-- Two -->
 			<section id="one" class="main style2">
 				<div class="container">
 					<div class="row 150%">
@@ -62,8 +42,6 @@
 								<li><span class="icon style2 major fa-female"></span></li>
 								<li><span class="icon style3 major fa-male"></span></li>
 								<li><span class="icon style4 major fa-user"></span></li>
-<!-- 								<li><span class="icon style5 major fa-desktop"></span></li>
-								<li><span class="icon style6 major fa-calendar"></span></li> -->
 							</ul>
 						</div>
 						<div class="6u$ 12u$(medium)">
@@ -79,49 +57,13 @@
 				</div>
 			</section>
 
-		<!-- Three -->
-<!-- 			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Adipiscing amet consequat</h2>
-					</header>
-					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
-					<div class="row 150%">
-						<div class="4u 12u$(medium)">
-							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="4u 12u$(medium)">
-							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section> -->
-
 		<!-- Four -->
 			<section id="four" class="main style1 special">
 				<div class="container" id="uno">
 					<header class="major">
-						<h2>Administración?</h2>
+						<h2>Administración</h2>
 					</header>
-					<p>Solo personal Autorizado.</p>
+					<p>Solo personal Autorizado?</p>
 					<form method="post" action="#">
 							<div class="row uniform 50% ">
 								<div class="12u$">
@@ -138,10 +80,6 @@
 								</div>
 							</div>
 					</form>
-<!-- 					<ul class="actions uniform">
-						<li><a href="#" class="button special">Ingresar</a></li>
-						<li><a href="#" class="button">Cancelar</a></li>
-					</ul> -->
 				</div>
 			</section>
 
@@ -150,12 +88,11 @@
 				<ul class="icons">
 					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-					<!-- <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li> -->
-					<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://github.com/alexanders0/RegistroCursoOnline.git" class="icon alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
 					<!-- <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li> -->
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">GRUPO 5</a></li>
+					<li>&copy; Untitled</li><li>Design: <a href="#" >GRUPO 5</a></li>
 				</ul>
 
 			</section>

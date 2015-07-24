@@ -43,7 +43,7 @@
 									<h4>Monto a Cancelar:</h4>
 								</div>
 								<div class="6u 12u$(small)">
-									<h4>$
+									<h4>$ 
 										<?php 
 											echo $monto; 
 										?> 
