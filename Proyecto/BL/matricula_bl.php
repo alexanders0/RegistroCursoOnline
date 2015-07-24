@@ -50,24 +50,6 @@
 	  	{
 	  		include ("../DAT/matricula_dat.php");
 	  		include ("../clases/estudiante.php");
-	  // 		$cursos = consultar_cursos_tutor($CI_EMPLEADO);
-			// if (is_array($cursos)) {
-			// 	foreach ($cursos as $curso) 
-			// 	{
-			// 		$estudiantes = consultar_lista_estudiantes($curso["ID_CURSO"]);
-			// 		$e = new estudiante();
-			// 		$e->set_nombre($est["NOMBRES"]);
-			// 		$e->set_apellido($est["APELLIDOS"]);
-			// 		$e->set_CI($est["CI"]);
-			// 		$e->set_fecha_nac($est["FECHA_NAC"]);	
-			// 		$e->set_correo($est["E_MAIL"]);
-			// 		$lista_estudiantes[$curso["NOMBRE_CURSO"]] = $e;				
-			// 	}
-			// 	return $lista_estudiantes;
-			// } else {
-			// 	return null;
-			// }
-
 
 	  		$estudiantes = consultar_lista_estudiantes($CI_EMPLEADO);
 			if (is_array($estudiantes)) {
@@ -82,7 +64,6 @@
 					$curso = $est["NOMBRE_CURSO"];	
 					$lista_estudiantes[]=$e;				
 				}
-				// print_r($curso);
 				return $lista_estudiantes;
 			} else {
 				return null;
@@ -99,7 +80,6 @@
 	  		foreach ($estudiantes as $estudiante) {
 	  			$estudiante["PROMEDIO"] = consultar_promedio($estudiante["ID_MATRICULA"]);
 	  		}
-	  		// echo $estudiante[0]["PROMEDIO"];
 	  		return $estudiantes;
 	  	}
 	}

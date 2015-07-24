@@ -66,11 +66,9 @@
 									<tbody>
 									<?php
 										$estudiantes = consultar_notas_estudiantes($_SESSION["cuenta"]);
-										// print_r($estudiantes);
 										if (is_array($estudiantes)) {
 											foreach ($estudiantes as $est) {
 												$e = $est;
-												// print_r($e);
 												echo "<tr>";
 												echo "<td>".$e["CI"]."</td>";
 												echo "<td>".$e["NOMBRES"]."</td>";

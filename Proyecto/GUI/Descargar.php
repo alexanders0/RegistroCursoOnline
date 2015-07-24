@@ -70,7 +70,6 @@
 											if (is_array($estudiantes)) {
 												foreach ($estudiantes as $est) {
 													$e = $est;
-													// print_r($e);
 													echo "<tr>";
 													echo "<td>".$e->get_CI()."</td>";
 													echo "<td>".$e->get_nombre()."</td>";
@@ -81,12 +80,6 @@
 											}
 									?>
 									</tbody>
-<!-- 									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot> -->
 								</table>
 							</div>
 						

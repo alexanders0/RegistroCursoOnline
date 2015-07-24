@@ -75,20 +75,6 @@
 		}
 	}
 
-	// if (!function_exists('consultar_cursos_tutor')){
-	//   function consultar_cursos_tutor($CI_EMPLEADO)
-	//   	{
-	//   		include("conect.php");
-	// 		$SQL = "SELECT cursos.* FROM cursos JOIN empleados on cursos.CI_EMPLEADO=empleados.CI_EMPLEADO WHERE cursos.CI_EMPLEADO='".$CI_EMPLEADO."'"; 
-	// 		$resultado = mysql_query($SQL) or die(mysql_error($link));
-	// 		while ($row  = mysql_fetch_array($resultado,MYSQL_ASSOC))
-	// 		{
-	// 		  	$cursos[]=$row;
-	// 		}
-	// 		return $cursos;
-	// 	}
-	// }
-
 	if (!function_exists('consultar_lista_estudiantes')){
 	  function consultar_lista_estudiantes($CI_EMPLEADO)
 	  	{
@@ -113,6 +99,7 @@
 			{
 			  	$notas[]=$row;
 			}
+			print_r($notas);
 			return $notas;
 		}
 	}
