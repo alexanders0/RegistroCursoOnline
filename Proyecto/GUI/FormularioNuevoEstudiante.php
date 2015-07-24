@@ -63,7 +63,7 @@ if(isset($_POST["cursos"])){
 	<body>
 
 		<!-- Five -->
-			<section id="five" class="main style1">
+			<section id="" class="main style1">
 				<div class="container" id="uno">
 					<ul class="icons">
 						<li><a href="index.php" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a></li>

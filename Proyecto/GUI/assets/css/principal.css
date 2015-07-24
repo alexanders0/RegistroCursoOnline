@@ -118,6 +118,9 @@
 		#uno {
 			width: 30em;
 		}
+		#dos {
+			width: 40em;
+		}
 
 	}
 
@@ -2619,7 +2622,7 @@
 		border-radius: none;
 		border: 0;
 		box-shadow: none;
-		color: #555 !important;
+		color: #fff !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.9em;
@@ -2737,11 +2740,23 @@
 		padding: 1em 0 4em 0 ;
 	}
 
+	#five {
+		padding: 0 0 4em 0 ;
+	}
+
 	#one{
 		padding: 6em 0 4em 0 ;
 	}
 	#logeo{
+		padding: 0;
+		background-color: #4686a0;
+		color: rgba(255, 255, 255, 0.75);
+		background-attachment: fixed,							fixed,							fixed;
+		background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%);
+		background-position: top left,						center center,					center center;
+		background-size: auto,							cover,							cover;
 		text-align: right;
+
 	}
 
 		.main.style1 {

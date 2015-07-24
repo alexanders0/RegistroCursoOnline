@@ -75,17 +75,6 @@
 										<div class="12u$">
 											<div class="select-wrapper">
 												<select name="demo-category" id="demo-category">
-													<option value="">- Areas -</option>
-													<option value="1">Administrativa</option>
-													<option value="1">Biológica</option>
-													<option value="1">Sociohumanistica</option>
-													<option value="1">Técnica</option>
-												</select>
-											</div>
-										</div>
-										<div class="12u$">
-											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category">
 													<option value="">- Curso -</option>
 													<option value="1">RSE</option>
 													<option value="1">Biologia 1</option>

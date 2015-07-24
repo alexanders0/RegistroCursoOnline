@@ -29,9 +29,8 @@
 	<body>
 
 		<!-- Five -->
-			<section id="five" class="main style1">
+			<section id="" class="main style1">
 				<div class="container" id="uno">
-					
 					<header class="major special">
 						<h2>Pago</h2>
 					</header>
@@ -44,7 +43,7 @@
 									<h4>Monto a Cancelar:</h4>
 								</div>
 								<div class="6u 12u$(small)">
-									<h4>$s
+									<h4>$
 										<?php 
 											echo $monto; 
 										?> 

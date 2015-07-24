@@ -48,7 +48,7 @@
 					<section>
 						<!-- 						<h5>Bienvenido</h5> -->
 						<header class="major special">
-							<h5>Bienvenido</h5>
+							<h5>Sistema de Registro de Cursos en Linea</h5>
 						</header>
 					</section>
 			</div>
