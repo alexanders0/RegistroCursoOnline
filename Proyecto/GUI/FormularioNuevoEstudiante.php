@@ -12,11 +12,15 @@ if(!isset($_GET["cedula"])){
 } else{
 	$cedula = $_GET["cedula"];
 	$email = $_GET["email"];
-	$valor = validar_cedula($_GET["cedula"]);
 }
 
 //Obtener los datos del aspirante según su CI ingresada
 if(isset($_GET["cedula"])){
+	$valor = validar_cedula($_GET["cedula"]);
+	if ($valor["estado"]==0) {
+		echo "<script type='text/javascript'>alert('".$valor["mensaje"]."');</script>";
+	}
+	
 	$estudiantes = obtener_persona($_GET["cedula"]);
 	if (is_array($estudiantes)) {
 		foreach ($estudiantes as $est) {

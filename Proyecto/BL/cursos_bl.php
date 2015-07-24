@@ -10,4 +10,16 @@
 			return $cursos;
 		}
 	}
+
+	if (!function_exists('lista_cursos_tutor')){
+		function lista_cursos_tutor()
+		{		
+			foreach (glob("../DAT/*.php") as $filename)
+			{
+				include $filename;
+			}
+			$cursos = consulta_cursos_tut();
+			return $cursos;
+		}
+	}
 ?>

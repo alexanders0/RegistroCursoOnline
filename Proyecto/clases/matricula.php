@@ -41,9 +41,5 @@
 			$fecha_matricula = date("Y-m-d",time());
 			return $this->fecha_matricula;
 		}
-		//funciones de la clase
-		public function realizar_matricula(){
-
-		} 
 	}
 ?>

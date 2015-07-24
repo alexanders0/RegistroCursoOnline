@@ -1,3 +1,20 @@
+<?php
+foreach (glob("../BL/*.php") as $filename)
+{
+	include $filename;
+}
+include("../clases/tutor.php");
+if(isset($_GET["nombre"])){
+	if (isset($_GET["nombre"])) {
+		$tutor = new tutor();
+		$tutor->set_nombre($_GET["nombre"]);
+		$tutor->set_apellido($_GET["apellido"]);
+		$tutor->set_titulo($_GET["titulo"]);
+		$tutor->set_correo($_GET["correo"]);
+		registrar_tutor($tutor, $_GET["usuario"], $_GET["contrasena"], $_GET["cursos"]);
+	}
+}
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -52,37 +69,43 @@
 						</header>
 
 							<section>
-								<form method="post" action="#">
+								<form method="<?php $_SERVER['PHP_SELF'] ?>" action="#">
 									<div class="row uniform 50%">
 										<div class="6u 12u$(xsmall)">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Nombre" />
+											<input type="text" name="nombre" id="demo-name" value="" placeholder="Nombre" />
 										</div>
 										<div class="6u 12u$(small)">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Apellido" />
+											<input type="text" name="apellido" id="demo-name" value="" placeholder="Apellido" />
 										</div>
-										<div class="6u 12u$(xsmall)">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Cl" />
-										</div>
-										<div class="6u$ 12u$(xsmall)">
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-										</div>
-										<div class="6u 12u$(xsmall)">
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Contraseña" />
+										<div class="6u 12u$(small)">
+											<input type="text" name="titulo" id="demo-name" value="" placeholder="Titulo" />
 										</div>
 										<div class="6u$ 12u$(xsmall)">
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="Confirmar Contraseña" />
+											<input type="email" name="correo" id="demo-email" value="" placeholder="Email" />
 										</div>
-										<div class="12u$">
+										<div class="6u 12u$(xsmall)">
+											<input type="text" name="usuario" id="demo-name" value="" placeholder="Usuario" />
+										</div>
+										<div class="6u$ 12u$(xsmall)">
+											<input type="password" name="contrasena" id="demo-contrasena" value="" placeholder="Contraseña" />
+										</div>
+
+
+										<div class="6u 12u$(xsmall)">
 											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category">
-													<option value="">- Curso -</option>
-													<option value="1">RSE</option>
-													<option value="1">Biologia 1</option>
-													<option value="1">Psicoogia 1</option>
-													<option value="1">Programación</option>
+												<select name="cursos" id="demo-area ">
+													<?php
+														include("../BL/cursos_bl.php");
+														$cursos = lista_cursos_tutor();
+													    foreach ($cursos as $curso)
+													    {
+													        echo utf8_encode("<option value='".$curso["ID_CURSO"]."'>".$curso["NOMBRE_CURSO"]."</option>");
+													    }
+													?>
 												</select>
 											</div>
-										</div>						
+										</div>
+
 										<div class="12u$">
 											<ul class="actions">
 												<li><input type="submit" value="Registrar" class="special" /></li>

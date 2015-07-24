@@ -11,5 +11,19 @@
 			return $total_cursos;
 		}
 	}
+
+	if (!function_exists('consulta_cursos_tut')){
+	  function consulta_cursos_tut()
+	  	{
+			$cursos = "SELECT ID_CURSO, NOMBRE_CURSO FROM cursos WHERE CI_EMPLEADO IS NULL;";
+			$resultado= mysql_query($cursos);
+			while ($row  = mysql_fetch_array($resultado,MYSQL_ASSOC))
+			{
+			  $total_cursos[]=$row;
+			}
+			print_r($total_cursos);
+			return $total_cursos;
+		}
+	}
 ?>
 
