@@ -29,7 +29,7 @@
 						<ul class="actions fit small">
 							<?php 
 								if ($_SESSION["acceso"] == "secretaria") {
-									echo "<li><a href=FormularioNuevoTutor.php class='button special fit small'>Registrar Tutor</a></li>";
+									echo "<li><a href=FrmNuevoTutor.php class='button special fit small'>Registrar Tutor</a></li>";
 								} 
 								if ($_SESSION["acceso"] == "secretaria") {
 									echo "<li><a href=Verificar.php class='button fit small'>Verificar Requisitos</a></li>";

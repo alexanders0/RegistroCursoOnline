@@ -45,7 +45,7 @@ if(isset($_POST["cursos"])){
 	$message = "Estudiante registrado con Exito!";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 	$id_curso = $_POST["cursos"];
-	echo "<meta http-equiv='Refresh' content='0;url=FormularioPago.php?id_curso=$id_curso'>";
+	echo "<meta http-equiv='Refresh' content='0;url=FrmPago.php?id_curso=$id_curso'>";
 }
 
 ?>

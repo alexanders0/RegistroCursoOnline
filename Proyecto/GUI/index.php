@@ -24,7 +24,7 @@
 				<div class="inner">
 					<span class="icon major fa-mortar-board"></span>
 					<h1>Servicio de Registro de Cursos en Linea <strong></strong>, que esperas<br />
-					para emprender un nuevo reto <i class="fa fa-arrow-circle-o-right"></i></i><a href="FormularioNuevoEstudiante.php"> REGISTRATE</a>.</h1>
+					para emprender un nuevo reto <i class="fa fa-arrow-circle-o-right"></i></i><a href="FrmNuevoEstudiante.php"> REGISTRATE</a>.</h1>
 					<p>La mejor inversión siempre será en conocimiento, no dejes pasar mas en tiempo atrévete ya!!!</p>
 					<ul class="actions">
 						<li><a href="#one" class="button scrolly">Más Información</a></li>
