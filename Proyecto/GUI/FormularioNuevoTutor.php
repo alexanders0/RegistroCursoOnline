@@ -13,32 +13,33 @@
 
 		<!-- Five -->
 		<section id="five" class="main style1">
-			<div class="container">
-				<div id="logeo">
-					<?php
-						include("cabecera.php");
-					?>
-				</div>
+			<div id="logeo">
+				<?php
+					include("cabecera.php");
+				?>
+			</div>			
+			<div class="container" id="dos">
 				<header class="major special">
 					<h2>SRCL</h2>
 				</header>
 					<section>
-						<a href="index2.html" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a>
+						<a href="index2.php" class="icon alt fa-home fa-lg"><span class="label">Inicio</span></a>
 						<h4>Servicios</h4>
 
 						<ul class="actions fit small">
 							<?php 
 								if ($_SESSION["acceso"] == "secretaria") {
-									echo "<li><a href=FormularioNuevoTutor.php class=button special fit small>Registrar Tutor</a></li>";
-								}
+									echo "<li><a href=FormularioNuevoTutor.php class='button special fit small'>Registrar Tutor</a></li>";
+								} 
 								if ($_SESSION["acceso"] == "secretaria") {
-									echo "<li><a href=Verificar.php class=button fit small>Verificar los requisitos</a></li>";
+									echo "<li><a href=Verificar.php class='button fit small'>Verificar Requisitos</a></li>";
+								}
+
+								if ($_SESSION["acceso"] == "tutor") {
+									echo "<li><a href=Descargar.php class='button special fit small'>Descargar lista</a></li>";
 								}
 								if ($_SESSION["acceso"] == "tutor") {
-									echo "<li><a href=Descargar.php class=button special fit small>Descargar lista</a></li>";
-								}
-								if ($_SESSION["acceso"] == "tutor") {
-									echo "<li><a href=RegistrarNotas.php class=button fit small>Registrar Notas</a></li>";
+									echo "<li><a href=RegistrarNotas.php class='button fit small'>Registrar Notas</a></li>";
 								}
 							?>
 						</ul>		
